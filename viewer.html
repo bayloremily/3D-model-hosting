@@ -31,18 +31,7 @@
             height: 80%; /* Adjust height as needed */
         }
 
-        /* Style for the overlay graphic */
-        .overlay-image {
-            position: absolute; /* Positioning the image on top of the model viewer */
-            top: 10%; /* Adjust as needed */
-            left: 10%; /* Adjust as needed */
-            width: 200px; /* Width of the overlay image */
-            height: auto; /* Maintain aspect ratio */
-            opacity: 0.7; /* Semi-transparent */
-            z-index: 1; /* Ensure it appears above the model viewer */
-        }
-
-        /* Hotspot style */
+        /* Style for the hotspot */
         .hotspot {
             position: absolute;
             width: 30px; /* Size of the hotspot */
@@ -76,13 +65,12 @@
     </div>
     
     <script>
-        // Optionally, you can add more interactivity using JavaScript
-        // You can attach event listeners for hover, click, etc.
+        // Optional interactivity using JavaScript
         const hotspots = document.querySelectorAll('.hotspot');
         
         hotspots.forEach(hotspot => {
             hotspot.addEventListener('click', function() {
-                // You can add more functionality here
+                // Add more functionality here
                 console.log(`Hotspot ${this.id} clicked!`);
             });
         });
