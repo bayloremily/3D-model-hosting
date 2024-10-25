@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <title>3D Model Viewer</title>
+    <title>3D Model Viewer with Hotspots</title>
     <style>
         body {
             margin: 0;
@@ -30,11 +30,34 @@
             width: 80%; /* Adjust width as needed */
             height: 80%; /* Adjust height as needed */
         }
+
+        /* Style for the overlay graphic */
+        .overlay-image {
+            position: absolute; /* Positioning the image on top of the model viewer */
+            top: 10%; /* Adjust as needed */
+            left: 10%; /* Adjust as needed */
+            width: 200px; /* Width of the overlay image */
+            height: auto; /* Maintain aspect ratio */
+            opacity: 0.7; /* Semi-transparent */
+            z-index: 1; /* Ensure it appears above the model viewer */
+        }
+
+        /* Hotspot style */
+        .hotspot {
+            position: absolute;
+            width: 30px; /* Size of the hotspot */
+            height: 30px; /* Size of the hotspot */
+            background-color: red; /* Color of the hotspot */
+            border-radius: 50%; /* Make it a circle */
+            z-index: 2; /* Ensure it appears above the model viewer */
+            cursor: pointer; /* Change cursor to pointer */
+        }
     </style>
 </head>
 <body>
     <div class="model-container">
         <model-viewer 
+            id="myModel"
             src="./heart.glb" 
             ar 
             ar-modes="webxr scene-viewer quick-look" 
@@ -43,6 +66,26 @@
             poster="poster.webp" 
             shadow-intensity="1">
         </model-viewer>
+        
+        <!-- Hotspot 1 -->
+        <div class="hotspot" id="hotspot1" style="top: 30%; left: 30%;" onclick="alert('Hotspot 1 clicked!');"></div>
+        
+        <!-- Hotspot 2 -->
+        <div class="hotspot" id="hotspot2" style="top: 50%; left: 70%;" onclick="alert('Hotspot 2 clicked!');"></div>
+        
     </div>
+    
+    <script>
+        // Optionally, you can add more interactivity using JavaScript
+        // You can attach event listeners for hover, click, etc.
+        const hotspots = document.querySelectorAll('.hotspot');
+        
+        hotspots.forEach(hotspot => {
+            hotspot.addEventListener('click', function() {
+                // You can add more functionality here
+                console.log(`Hotspot ${this.id} clicked!`);
+            });
+        });
+    </script>
 </body>
 </html>
