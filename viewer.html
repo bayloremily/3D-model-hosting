@@ -10,36 +10,31 @@
             margin: 0;
             overflow: hidden;
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Full viewport height */
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
         }
-
         .model-container {
-            position: relative; /* Position relative for child positioning */
+            position: relative;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent black background */
+            background-color: rgba(255, 255, 255, 0.8);
             display: flex;
-            justify-content: center; /* Center the model viewer */
-            align-items: center; /* Center the model viewer */
+            justify-content: center;
+            align-items: center;
         }
-
         model-viewer {
-            width: 80%; /* Adjust width as needed */
-            height: 80%; /* Adjust height as needed */
+            width: 80%;
+            height: 80%;
         }
-
-        /* Style for the hotspot */
-        .hotspot {
-            position: absolute;
-            width: 30px; /* Size of the hotspot */
-            height: 30px; /* Size of the hotspot */
-            background-color: red; /* Color of the hotspot */
-            border-radius: 50%; /* Make it a circle */
-            z-index: 2; /* Ensure it appears above the model viewer */
-            cursor: pointer; /* Change cursor to pointer */
+        .hotspot-button {
+            background-color: red;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -47,33 +42,21 @@
     <div class="model-container">
         <model-viewer 
             id="myModel"
-            src="heart_body.glb" 
-            ar 
-            ar-modes="webxr scene-viewer quick-look" 
-            camera-controls 
-            tone-mapping="neutral" 
-            poster="poster.webp" 
+            src="https://bayloremily.github.io/3D-model-hosting/heart_body.glb"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            camera-controls
+            tone-mapping="neutral"
+            poster="https://bayloremily.github.io/3D-model-hosting/poster.webp"
             shadow-intensity="1">
+
+            <!-- Hotspot 1 -->
+            <button slot="hotspot-1" class="hotspot-button" data-position="0.2 0.3 0.1" data-normal="0 1 0" onclick="alert('Hotspot 1 clicked!');"></button>
+            
+            <!-- Hotspot 2 -->
+            <button slot="hotspot-2" class="hotspot-button" data-position="-0.1 0.2 0.3" data-normal="0 1 0" onclick="alert('Hotspot 2 clicked!');"></button>
+
         </model-viewer>
-        
-        <!-- Hotspot 1 -->
-        <div class="hotspot" id="hotspot1" style="top: 30%; left: 30%;" onclick="alert('Hotspot 1 clicked!');"></div>
-        
-        <!-- Hotspot 2 -->
-        <div class="hotspot" id="hotspot2" style="top: 50%; left: 70%;" onclick="alert('Hotspot 2 clicked!');"></div>
-        
     </div>
-    
-    <script>
-        // Optional interactivity using JavaScript
-        const hotspots = document.querySelectorAll('.hotspot');
-        
-        hotspots.forEach(hotspot => {
-            hotspot.addEventListener('click', function() {
-                // Add more functionality here
-                console.log(`Hotspot ${this.id} clicked!`);
-            });
-        });
-    </script>
 </body>
 </html>
