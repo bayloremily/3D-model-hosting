@@ -37,24 +37,7 @@
             background: #3b82f6;
             transition: width 0.1s;
         }
-        #ar-button {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background: #3b82f6;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #ar-prompt img {
-            width: 50px;
-            height: auto;
-            display: block;
-            margin: 10px auto;
-        }
+
     </style>
 </head>
 <body>
@@ -67,27 +50,22 @@
         poster="https://bayloremily.github.io/3D-model-hosting/poster-2.webp" 
         shadow-intensity="1">
         
-        <!-- Hotspots -->
-        <button class="Hotspot" slot="hotspot-1" data-position="0.006785649454768637m 0.23103431112549128m 0.5922326436178602m" data-normal="0.3488319437570688m 0.30165218062754906m 0.8873118036729309m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Test 1</div>
-        </button>
-        <button class="Hotspot" slot="hotspot-2" data-position="-0.38556690072029964m 0.6805818370129594m 0.261987312176969m" data-normal="-0.471386361378558m 0.03479255884857131m 0.8812402488283502m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Test 2</div>
-        </button>
-        <button class="Hotspot" slot="hotspot-3" data-position="0.4814986212088189m 0.27066454802383805m -0.4501874213585234m" data-normal="0.7717155354651623m 0.1944982690884392m -0.6054961235576319m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Test 3</div>
-        </button>
-
-        <!-- Progress bar and AR button -->
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-            View in your space
-        </button>
-        <div id="ar-prompt">
-            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-    </model-viewer>
+         <button class="Hotspot" slot="hotspot-1" data-position="-73.93705504764453m 8.821200774853782m 48.7798227610117m" data-normal="-0.4998614422000382m 0.25469603761942305m 0.8278094388340008m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">V1</div>
+    </button><button class="Hotspot" slot="hotspot-2" data-position="-19.84869266626165m 5.468010144262834m 63.20739592404357m" data-normal="-0.653756204205869m 0.6493603277741264m 0.3885022396015412m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">V2</div>
+    </button><button class="Hotspot" slot="hotspot-3" data-position="10.404020862849091m -24.3452109135743m 96.08029823404354m" data-normal="-0.04516683451401334m 0.18159140724593797m 0.9823362549933824m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">V3</div>
+    </button><button class="Hotspot" slot="hotspot-5" data-position="34.975377181199406m -71.87390763501867m 96.33790353878145m" data-normal="0.3603529058936004m 0.11785338555287336m 0.9253412142165526m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">V4</div>
+    </button><button class="Hotspot" slot="hotspot-6" data-position="70.18922300096855m -100.58552336402805m 82.56819274392316m" data-normal="0.417637948645553m -0.026478698127513054m 0.9082276269727796m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">V5</div>
+    </button><button class="Hotspot" slot="hotspot-7" data-position="99.16921841370583m -136.43860504713496m 39.95437743436162m" data-normal="0.8241126943765036m -0.548185444071249m -0.1425867661317387m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">V6</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
 </body>
 </html>
