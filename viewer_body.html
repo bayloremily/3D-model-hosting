@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Heart and Body Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        model-viewer {
+            width: 80%;
+            height: 80%;
+        }
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .update-bar {
+            width: 0%;
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.1s;
+        }
+
+    </style>
+</head>
+<body>
+    <model-viewer 
+        src="https://bayloremily.github.io/3D-model-hosting/male_body_base_mesh_highpoly.glb" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        tone-mapping="neutral" 
+        poster="https://bayloremily.github.io/3D-model-hosting/poster-8.webp" 
+        shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
+</body>
+</html>
